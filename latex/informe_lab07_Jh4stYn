@@ -1,0 +1,370 @@
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{jpayehuancar@unsa.edu.pe}
+\newcommand{\itemStudent}{Jhastyn Jefferson Payehuanca Riquelme}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{20222064}
+\newcommand{\itemSemester}{III}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - A}
+\newcommand{\itemInput}{Del 04 Julio 2023}
+\newcommand{\itemOutput}{Al 14 Julio 2023}
+\newcommand{\itemPracticeNumber}{07}
+\newcommand{\itemTheme}{Django 03}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet.png}}}
+\fancyfoot[L]{Estudiante Jhastyn J.P.R.}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Tarea}
+	Reproducir las actividades de los videos donde trabajamos:
+
+        \begin{enumerate}
+          \item Relación de uno a muchos
+          \item Relación muchos a muchos
+          \item Impresión de pdfs
+          \item Envio de emails
+          \item Crear su video Flipgrid
+        
+        \end{enumerate}
+	
+	\section{URL GitHub/Video}
+	\begin{itemize}
+            \item URL del repositorio GitHub.
+		\item \url{https://github.com/Jh4stYn/Lab07.git}
+		\item URL del Video.
+		\item \url{https://flip.com/s/GzyVNPBYNt1Q}
+	\end{itemize}
+	
+	\section{Relación de uno a muchos - Relación muchos a muchos}
+        \begin{description}
+            Creamos los modelos para poder trabajar        
+            \lstinputlisting[language=python, caption={Models.py},numbers=left,] {src/models/models.py}
+
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/models/language.png}
+            \includegraphics[width=0.8\textwidth,keepaspectratio]{img/models/framework.png}      
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	\end{figure}
+
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/models/movie.png}
+            \includegraphics[width=0.8\textwidth,keepaspectratio]{img/models/character.png}          
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	\end{figure}
+
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/models/character_movies.png}       
+            %\label{img:mot2}
+		%\caption{Product backlog.}
+	\end{figure}
+    \end{description}
+
+    \section{IMPRESION DE PDFs}
+    Se logró replicar el código siendo estos los más importantes
+        \begin{description}
+        [--] utils.py, es el encargado de renderizar el pdf, transformando el Html en un PDF.
+        
+        \lstinputlisting[language=python, caption={Utils.py},numbers=left,] {src/pdf/utils.py}
+
+        
+        [--] views.py, este es el encargado de generar el pdf, dando el nombre y la información necesario al template para que esté completo.
+        \lstinputlisting[language=python, caption={Views.py},numbers=left,] {src/pdf/views.py}
+        
+        [--] invoice.html, es lo que recibirá información de la Vista y se transformará en PDF
+        \lstinputlisting[language=Html, caption={Invoice.html},numbers=left,] {src/pdf/invoice.html}
+        
+        Para poder ejecutar este ejercicio, necesitaremos escribir el siguiente comando en la ubicación del 'manage.py':
+        
+        \newline-
+        \begin{lstlisting}
+         python .\manage.py runserver
+        \end{lstlisting}
+        
+        \newline
+        Una vez hayamos ejecutado el comando, se encenderá nuestro servidor, el cual podremos abrir ingresando a la siguiente dirección:  
+        
+        \newline
+        \newline (\url{http://127.0.0.1:8000/pdf/}) 
+        
+        \newline
+        \newline Una vez dentro podremos visualizar todo el contenido de nuestro PDF, el cuál podremos descargar sin ningún problema.
+        
+        \newline
+        \newline Se recuerda que el contenido es totalmente modificable, tan solo tendremos que editar nuestro archivo 'invoice.html a nuestra conveniencia'
+        
+        \begin{figure}[H]
+        		\centering
+        		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/pdf/pdf.png}
+        		%\includesvg{img/automata.svg}
+        		%\label{img:mot2}
+        		%\caption{Product backlog.}
+        	\end{figure}
+        \end{description}
+
+    \section{ENVÍO DE EMAILS}
+
+    \begin{description}
+        [--] views.py, aqui debemos colocar el Asunto, el Cuerpo, el Correo con el que se enviará y el/los correo(s) a donde llegará(destinatario). Para el ejemplo se usará correos temporales como destinatarios.
+        \lstinputlisting[language=python, caption={Views.py},numbers=left,] {src/email/views.py}
+
+        [--] settings.py, aqui debemos configurar el servicio SMTP del cual haremos uso para el envío de correo, en el que debemos de colocar, dominio, puerto y el correo(user) junto con la contraseña con la que se enviará el correo, es importante que estos sean correctos. Algo importante para que funcione con el servicio SMTP de Gmail, es habilitar el acceso de aplicaciones menos seguras en tu cuenta de Gmail. Puedes hacerlo siguiendo estas instrucciones: \url{https://support.google.com/accounts/answer/6010255}
+        
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{img/email/apps.png}       
+            %\label{img:mot2}
+		%\caption{Product backlog.}
+	\end{figure}
+ 
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6 \textwidth,keepaspectratio]{img/email/emailConfig.png}       
+            %\label{img:mot2}
+		%\caption{Product backlog.}
+	\end{figure}
+    
+    
+    [--] index.html, si todo va bien, esta página se cargará correctamente:
+    \lstinputlisting[language=html, caption={Views.py},numbers=left,] {src/email/index.html}
+    
+    \end{description}
+    \newline-
+        \begin{lstlisting}
+         python .\manage.py runserver
+        \end{lstlisting}
+        
+        \newline
+        Una vez hayamos ejecutado el comando, se encenderá nuestro servidor, el cual podremos abrir ingresando a la siguiente dirección:  
+        
+        \newline
+        \newline (\url{http://127.0.0.1:8000}) 
+        
+        \newline
+        \newline Una vez dentro podremos visualizar el mensaje 'Sent an email!', que nos indica que el email ya fue enviado a nuestro correo
+        \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/email/email.png}
+    		%\includesvg{img/automata.svg}
+    		%\label{img:mot2}
+    		%\caption{Product backlog.}
+    	\end{figure}
+        
+        \newline
+        \newline Email enviado        
+        \begin{figure}[H]
+        		\centering
+        		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/email/emisor.png}
+        		%\includesvg{img/automata.svg}
+        		%\label{img:mot2}
+        		%\caption{Product backlog.}
+        	\end{figure}
+         
+        \newline
+        \newline Email recibido
+        \begin{figure}[H]
+        		\centering
+        		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/email/receptor.png}
+        		%\includesvg{img/automata.svg}
+        		%\label{img:mot2}
+        		%\caption{Product backlog.}
+        	\end{figure}
+ 
+    \newpage
+    \Section{Estructura de laboratorio 07}
+	\begin{itemize}	
+		\item El contenido que se entrega en este laboratorio es el siguiente:
+	\end{itemize}
+
+    \begin{lstlisting}[style=ascii-tree]
+    lab07/
+    |--- requirements.txt
+    |--- latex
+    |    |--- img
+    |    |   |--- models
+    |    |   |   |--- language.png 
+    |    |   |   |--- framework.png 
+    |    |   |   |--- character.png 
+    |    |   |   |--- character_movies.png 
+    |    |   |   |--- movies.png 
+    |    |   |--- pdf
+    |    |   |   |--- pdf.png 
+    |    |   |--- email
+    |    |   |   |--- apps.png 
+    |    |   |   |--- email.png 
+    |    |   |   |--- emailConfig.png
+    |    |   |   |--- emisor.png
+    |    |   |   |--- receptor.png
+    |    |   |--- logo_abet.png
+    |    |   |--- logo_episunsa.png     
+    |    |--- src
+    |    |   |--- models
+    |    |   |   |--- models.py
+    |    |   |--- pdf
+    |    |   |   |--- invoice.html
+    |    |   |   |--- utils.py
+    |    |   |   |--- views.py
+    |    |   |--- email
+    |    |   |   |--- index.html
+    |    |   |   |--- views.py
+    |    |--- informe_lab07_Jh4stYn.pdf    
+    |    |--- informe_lab07_Jh4stYn.tex
+    |--- model_examples
+    |    |--- example
+    |    |--- model_example
+    |    |--- manage.py
+    |--- pdf_example
+    |    |--- pdf_example
+    |    |--- templates/pdf
+    |    |--- manage.py
+    |--- emails_example
+    |    |--- emails_example
+    |    |--- send
+    |    |--- manage.py
+    \end{lstlisting}    
+    
+    \end{document}
